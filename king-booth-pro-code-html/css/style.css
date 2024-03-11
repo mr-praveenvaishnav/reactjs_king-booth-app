@@ -1,0 +1,671 @@
+/********** Dashboard CSS **********/
+:root {
+    --primary: #009CFF;
+    --light: #F3F6F9;
+    --dark: #191C24;
+    --blue: #132651;
+    --perpal:#534dbb;
+    --regular-grey:#c1c1c1;
+    --black:#000;
+    --icon-grey:#94A3B8;
+    --text-grey:#727272;
+}
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #191C24;
+}
+
+body,p,table,tr,td,th{
+     font-family: "Open Sans", sans-serif;
+     color: var(--black);
+}
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+.bg-blue{
+    background: var(--blue) !important;
+}
+
+/* 
+.circle-content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;  
+    height: 50px; 
+    padding: 0;   
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2em; 
+
+} */
+
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ===== MIGHT NOT BE NEEDED =====  */
+
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+}
+.btn.btn-primary {
+    color: #FFFFFF;
+}
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+/* ===== MIGHT NOT BE NEEDED =====  */
+
+
+
+/*** =========== LAYOUT FOR ALL PAGES =========== ***/
+
+/* NAVBAR ALL SIZE */
+
+
+.fa-bars {
+    font-size: 20px; 
+    color: #000;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--light);
+    transition: 0.5s;
+    z-index: 999;
+}
+.content {
+    margin-left: 320px;
+    min-height: 100vh;
+    background: #f1f4f9;
+    transition: 0.5s;
+}
+
+/* ============= UPLOAD BUTTONS ============= */
+
+.upload-btn-wrapper input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer; /* You can add the cursor property directly here */
+  }
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.upload-btn-wrapper:hover {
+    cursor: pointer;
+  }
+
+
+
+
+/*** ============== SIDE BAR & Navbar ============== ***/
+
+
+
+.sidebar .navbar .navbar-nav .nav-link {
+    padding: 14px 30px 14px 50px;
+    color: var(--light);
+    font-weight: 200;
+    font-size: 16px;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+    color: var(--light);
+    background: #1a3164;
+    border-color: var(--light);
+}
+.sidebar .navbar .navbar-nav .nav-link i {
+  font-size: 34px;
+}
+.sidebar .navbar .dropdown-toggle::after {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+    transform: rotate(-90deg);
+}
+#p-urls *{
+    color: var(--perpal);
+}
+#submit-btn {
+    background-color: var(--perpal);
+    border-color: var(--perpal);
+    font-size: 16px;
+    font-weight: 100 !important;
+    min-width: 200px !important;
+    height: 50px;
+}
+
+.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-0deg);
+}
+.sidebar .navbar .dropdown-item {
+    padding-left: 25px;
+}
+.content .navbar .navbar-nav .nav-link {
+
+    color: var(--dark);
+    outline: none;
+}
+
+
+/* SIDE BAR DROP DOWN */
+
+#bg-dropdown,.sidebar .navbar .navbar-nav .show {
+    background: #1a3164;
+}
+#bg-dropdown > a {
+    padding: 6px 80px 6px 80px !important;
+    font-size: 12px;
+}
+#bg-dropdown > a:hover {
+    background: #132651;
+}
+
+/* ======== TOP NAVBAR ======== */
+
+.content .navbar .navbar-nav .nav-link:hover,
+.content .navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+#user-av:after {
+    display: none;
+}
+
+/* PROFILE CIRCLE */
+
+#user-av {
+    background:var(--regular-grey);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;  
+    height: 50px; 
+    padding: 0;   
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2em; 
+}
+.content .navbar .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: middle;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+.content .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+
+
+
+/* ================= TOP PROFILE CIRCLE NAV ============== */
+
+
+#top-user-nav .dropdown-menu {
+    font-size: 13px;
+    line-height: 16px;
+}
+#top-user-nav .dropdown-menu i {
+    font-size: 24px;
+    min-width: 26px;
+    color: var(--icon-grey);
+}
+#top-user-nav .dropdown-item:hover {
+    background: transparent;
+}
+#user-dp {
+    background: var(--regular-grey);
+
+}
+#top-user-nav a:hover,#top-user-nav a:focus{
+    color: #000 !important;
+}
+#cm-dropdown{
+    min-width: 270px;
+    font-family: 'Montserrat', sans-serif;
+}
+#box-wrap {
+    font-size: 14px;
+}
+#product-windows {
+    min-height: 240px;
+}
+#page-description-2 a, #p-des {
+    font-size: 12px;
+    color: #676666;
+}
+.table-cm {
+    min-height: 200px;
+}
+
+
+/* =============== PRODUCT PAGE ============== */
+
+#product-items {
+    min-height: 19rem;
+
+}
+
+
+#product-cart {
+    position: absolute;
+    bottom: 15px;
+}
+
+
+
+/* =============== ADD PRODUCT PAGE ============== */
+
+
+
+/*custom dropdown css*/
+#add-product .accordion-header {
+    border: 1px solid #dedede;
+    background-color: #fff;
+    padding: 5px 10px 5px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 280px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+#add-product .accordion-header .icon {
+    font-size: 12px;
+    color: #aeacac;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+#add-product .accordion-content.active {
+    display: block;
+    max-height: 1500px;
+    position: absolute;
+    z-index: 9;
+    padding: 5px 0px;
+}
+#add-product .accordion-content {
+    display: none;
+    width: 280px;
+    font-size: 16px;
+    background-color: #fff;
+}
+#add-product .accordion-content .option {
+    height: 40px;
+    width: 100%;
+    transition: 0.1s;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+ #add-product .accordion-content{
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+#add-product .input-with-button {
+    position: relative;
+    width: 100%;
+    padding-left: 0px;
+    border: 2px solid #dedede;
+    height: 40px;
+    align-items: center;
+    display: none;
+    overflow: hidden;
+    justify-content: space-evenly;
+}
+
+#add-product #button {
+    border: none;
+    outline: 0;
+    color: #fff;
+    background-color: var(--perpal);
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 20px;
+}
+#add-product .input-with-button input {
+    height: 100%;
+    border: none;
+    border-bottom: none;
+    outline: 0;
+    width: 100%;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-style: italic;
+}
+#add-product .input-with-button button {
+    height: 100%;
+    border: none;
+    background-color: #fff;
+    color: #8882ed;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    font-size: 12px;
+    padding: 0px;
+    top: 3px;
+}
+#add-product .accordion-content .option:hover {
+    background: var(--light);
+}
+
+
+#add-product #submit-btn {
+
+    margin-bottom: 5rem;
+}
+
+
+/* ================ Product Window ================ */
+
+
+#product-window .product-window-container
+{
+    max-width: 1100px;
+}
+
+#product-window .product-window-title-container .item-cell
+{
+    color: var(--text-grey);
+}
+
+#product-window .item-heading,
+#product-window .item-cell
+{
+    display: flex;
+    align-items: center;
+  
+
+}
+
+
+
+#product-window .product-window-container .product-body
+{
+    min-height: 340px;
+
+}
+
+#product-window .product-window-container .item-cell-container
+{
+    padding-right: 24px;
+
+}
+
+
+
+
+
+
+  
+
+
+
+
+
+@media (min-width: 992px) {
+
+    .sidebar {
+        margin-left: 0;
+    }
+    .sidebar.open {
+        margin-left: -320px;
+    }
+    .content {
+        width: calc(100% - 145px);
+    }
+    .content.open {
+        width: 100%;
+        margin-left: 0;
+    }
+    #top-user-nav .dropdown-menu{ display: none; }
+    #top-user-nav:hover .dropdown-menu{ display: block;    right: 0 /* rtl:ignore;; */;
+    left: auto /* rtl:ignore;; */; }
+    
+}
+
+
+/* ===== IPAD 1024 ===== */
+
+
+@media (max-width: 1025px) {
+
+
+/* NAVBAR */
+
+.money-container span {
+    display: none !important;
+}
+
+/* monye bag */
+.fa-solid {
+    font-size: 25px;
+}
+
+
+
+
+}
+
+
+
+
+
+
+/* ===== SIDE BAR CODE FOR SMALLER SCREENS ===== */
+
+
+@media (max-width: 991.98px) {
+
+
+    .navbar {
+        padding: 0 2rem !important;
+    }
+
+        #user-av {
+    font-size: 16px;
+}
+#cm-dropdown {
+    right: 0;
+    left: unset !important;
+    margin: 0;
+}
+    .sidebar {
+        margin-left: -320px;
+        top: 55px;
+    }
+    .sidebar.open {
+        margin-left: 0;
+    }
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+}
+
+
+/* ===== MOBILE ===== */
+
+
+
+@media (max-width: 550px) {
+
+
+
+    /* ======= UTILITIES ====== */
+
+    h5 {
+        font-size: 18px;
+    }
+
+
+
+
+    /* NAVBAR */
+
+    .navbar {
+        padding: 10px 1.20rem !important;
+    }
+
+    .navbar-brand {
+        padding-top: 2rem !important;
+    }
+
+
+    /* Untitled Navbar */
+
+    #untitled-navbar {
+        padding-right: 0.5rem !important;
+        padding-left: 0.5rem !important;
+    }
+
+
+
+    /* HAMBURGER ICON */
+    .fa-bars {
+        font-size: 25px; 
+        padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    }
+
+
+    #top-user-nav {
+        margin-left: 1rem;
+    }
+    /* =============== PRODUCTS =============== */
+
+    #product-items {
+        margin-bottom: 2rem;
+    }
+
+
+    /* =============== ADD PAGE =============== */
+
+
+    /* =============== PRODUCT WINDOW =============== */
+
+    
+       #product-window .product-window-container  {
+        padding-top: 20px !important;
+    }
+    
+       #product-window .product-window-container .item-cell-container {
+        padding-right: 12px;
+    }
+   #product-window .product-window-heading {
+    padding-left: 8px;
+   }
+
+
+
+   #product-window  .item-cell-container .item-cell {
+    font-size: 14px !important;
+ 
+}
+
+
+#product-window .product-body {
+    padding: 1rem .5rem 1rem 1rem !important;
+}
+
+#product-window .product-body .item-cell {
+    margin: 0 10px;
+}
+
+}
+
+
+
+
+
+@media (max-width: 390px) {
+
+    #product-window .product-body .item-cell {
+        margin: 0 8px;
+    }
+
+}
+
+@media (max-width: 375px) {
+
+    #product-window .product-body .item-cell {
+        margin: 0 7px;
+    }
+
+}
